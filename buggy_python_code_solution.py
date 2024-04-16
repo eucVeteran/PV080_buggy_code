@@ -14,7 +14,7 @@ def index():
 
         
 CONFIG = {"API_KEY": "771df488714111d39138eb60df756e6b"}
-class Person(object):
+class Person():
     def __init__(self, name):
         self.name = name
 
@@ -30,7 +30,7 @@ def fetch_website(urllib_version, url):
  
     try: 
         http = urllib.PoolManager()
-        r = http.request('GET', url)
+        request = http.request('GET', url)
     except:
         print('Exception')
 
@@ -51,7 +51,7 @@ if __name__ == '__main__':
     print("2. Code injection vulnerability: use string=;print('Own code executed') #")
     print("3. Yaml deserialization vulnerability: use string=file.yaml")
     print("4. Use of assert statements vulnerability: run program with -O argument")
-    choice  = input("Select vulnerability: ")
+    CHOICE  = input("Select vulnerability: ")
     if choice == "1": 
         new_person = Person("Vickie")  
         print_nametag(input("Please format your nametag: "), new_person)
